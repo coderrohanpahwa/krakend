@@ -1,0 +1,36 @@
+{
+    "version": 3,
+    "extra_config": {},
+    "port": 8080,
+    "endpoints": [
+      {
+        "endpoint": "/api",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/user_service",
+            "encoding": "json",
+            "sd": "static",
+            "extra_config": {},
+            "host":["http://localhost:5000"],
+            "disable_host_sanitize": true
+          }
+        ]
+      },
+      {
+        "endpoint": "/api_u",
+        "method": "GET",
+        "backend": [
+          {
+            "url_pattern": "/payment",
+            "encoding": "json",
+            "sd": "static",
+            "extra_config": {},
+            "host":["http://localhost:5001"],
+            "disable_host_sanitize": true
+          }
+        ]
+      }
+    ]
+  }
+  
